@@ -10,11 +10,11 @@ const STATE_INICIAL = {
   password: ''
 }
 
-const crearcuenta = () => {
+const CrearCuenta = () => {
   const { registrarUsuario, mensaje } = useAuth()
-  const {valores, errores, handleSubmit, handleChange, handleBlur} = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta)
+  const {valores, errores, handleSubmit, handleChange, handleBlur} = useValidacion(STATE_INICIAL, validarCrearCuenta, usuarioNuevo)
   
-  async function crearCuenta() {
+  async function usuarioNuevo() {
     registrarUsuario(valores)
   }
 
@@ -80,4 +80,4 @@ const crearcuenta = () => {
   )
 }
 
-export default crearcuenta
+export default CrearCuenta

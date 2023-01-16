@@ -11,7 +11,7 @@ const STATE_INICIAL = {
     password: ''
   }
 
-  const login = () => {
+  const Login = () => {
     const { mensaje, iniciarSesion, autenticado } = useAuth()
     const {valores, errores, handleSubmit, handleChange, handleBlur} = useValidacion(STATE_INICIAL, validarIniciarSesion, handleIniciarSesion)
     const router = useRouter()
@@ -74,4 +74,4 @@ const STATE_INICIAL = {
     )
   }
   
-  export default login
+  export default Login

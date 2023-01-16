@@ -5,7 +5,7 @@ import useApp from '../../hooks/useApp'
 import { saveAs } from 'file-saver'
 import { useRouter } from 'next/router'
 
-const muestraUrl = ({enlace}) => {
+const MuestraUrl = ({enlace}) => {
     const {  mensaje_archivo , mostrarAlerta } = useApp()
     const router = useRouter()
     const [ tienePassword, setTienePassword ] = useState(enlace.password)
@@ -129,4 +129,4 @@ export async function getServerSideProps({query: {url}}) {
     
 }
 
-export default muestraUrl
+export default MuestraUrl
