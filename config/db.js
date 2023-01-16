@@ -1,10 +1,11 @@
-import { connect, connection } from "mongoose";
+import mongoose, { connect, connection } from "mongoose";
 
 const conn = {
   isConnected: false,
 };
 
 export async function dbConnect() {
+  mongoose.set("strictQuery", false);
   const db = await connect(process.env.MONGO_URI);
   console.log(db.connection.db.databaseName);
   conn.isConnected = db.connections[0].readyState;
