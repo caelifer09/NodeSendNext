@@ -6,7 +6,7 @@ import shortid from 'shortid';
 const upload = multer({
     limits: {fileSize: 1024 * 1024 * 10},
     storage: multer.diskStorage({
-            destination: './public/uploads',
+            destination: './public',
             filename: (req, file, cb) => {
                 const extension = file.originalname.substring(file.originalname.lastIndexOf('.'), file.originalname.length)
                 cb(null, `${shortid.generate()}${extension}`)
@@ -28,10 +28,6 @@ apiRoute.use(upload.single('archivo'));
 apiRoute.post((req, res) => {
   res.status(200).json({ archivo: req.file.filename });
 });
-
-apiRoute.get(async (req, res) => {
-    console.log("hola get")
-})
 
 export const config = {
   api: {

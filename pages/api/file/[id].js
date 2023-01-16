@@ -19,7 +19,7 @@ export default async function enlaceIdHandler(req, res) {
             }
             if(enlace.descargas === 1){
               try {
-                fs.unlinkSync(`./public/uploads/${enlace.nombre}`)
+                fs.unlinkSync(`./public/${enlace.nombre}`)
                 await Enlace.findOneAndRemove(enlace._id)
               } catch (error) {
                 console.log(error)

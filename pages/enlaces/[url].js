@@ -17,7 +17,7 @@ const MuestraUrl = ({enlace}) => {
     }
     const saveFile = () => {
         saveAs(
-            `${process.env.NEXT_PUBLIC_FRONTEND}/uploads/${enlace.archivo}`,
+            `${process.env.NEXT_PUBLIC_FRONTEND}/${enlace.archivo}`,
             enlace.nombre_original
         )
         setTimeout(() => {            
